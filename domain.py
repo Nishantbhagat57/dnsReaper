@@ -1,6 +1,7 @@
 import ipaddress
 from collections import namedtuple
 from typing import Optional
+from asyncwhois.errors import NotFoundError
 
 import dns.asyncresolver
 
@@ -150,7 +151,7 @@ class Domain:
         try:
             await asyncwhois.aio_whois(self.domain)
             return True
-        except asyncwhois.NotFoundError:
+        except NotFoundError:
             return False
         except Exception:
             return True
