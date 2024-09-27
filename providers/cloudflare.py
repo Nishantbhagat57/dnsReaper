@@ -1,7 +1,6 @@
 import logging
 
 from domain import Domain
-from cloudflare import Cloudflare
 
 description = "Scan multiple domains by fetching them from Cloudflare"
 
